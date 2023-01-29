@@ -10,7 +10,7 @@ import fetcher from "../utils/fetchMessages";
 function ChatInput() {
   const [inputValue, setInputValue] = useState('');
   const { data: messages, mutate } = useSWR('/api/get_message', fetcher);
-  const { data: session } = useSession();
+  const session = useSession()?.data;
 
   const addMessage = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();

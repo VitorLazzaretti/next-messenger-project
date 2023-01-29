@@ -20,7 +20,7 @@ function MessageComponent({ message }: Props) {
 
   });
 
-  const { data: session } = useSession();
+  const session = useSession()?.data;
   const isUser = session?.user?.email === message.email;
 
   return (

@@ -6,7 +6,7 @@ import Link from 'next/link';
 import LogoutButton from './LogoutButton';
 
 function Header() {
-	const { data: session } = useSession();
+	const session = useSession()?.data;
 
 	return (
 		<div>
