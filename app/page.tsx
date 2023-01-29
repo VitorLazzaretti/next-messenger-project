@@ -1,11 +1,12 @@
 import { getServerSession } from "next-auth";
 import { Message } from "../typings";
 import ChatInput from "./ChatInput";
+import Header from "./Header";
 import MessageList from "./MessageList";
 import Providers from "./providers";
 
 async function HomePage() {
-  const data = await fetch(`/api/get_messages/`).then((res) => res.json()).catch(() => {});
+  const data = await fetch(`/api/get_messages/`).then((res) => res.json()).catch(() => { });
 
   const messages: Message[] = data?.messages;
   const session = await getServerSession();
@@ -13,6 +14,7 @@ async function HomePage() {
   return (
     <main>
       <Providers session={session}>
+        <Header />
         <MessageList initialMessages={messages} />
         <ChatInput />
       </Providers>
