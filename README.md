@@ -1,8 +1,9 @@
 # Next.js Example Messenger Project
+[![NPM](https://shields.io/npm/l/react)](https://github.com/VitorLazzarettiDev/next-messenger-project/blob/main/LICENCE)
 
 ## About the Project
 
-This project is an EXAMPLE that was built based on the youtube video from [Sonny Sangha](https://www.youtube.com/watch?v=T2jKJF4BZOY) with Next.js. I was training my [TailwindCSS](https://tailwindcss.com/) and discovering how to use the follow technologies.
+This project is an EXAMPLE that was built based on the youtube video from [Sonny Sangha](https://www.youtube.com/watch?v=T2jKJF4BZOY) with Next.js. I was training my [TailwindCSS](https://tailwindcss.com/) and discovering how to use the follow technologies. The project is a simple chat application, with Meta and GitHub Auth.
 
 This project can be accessed at the current link:
 
