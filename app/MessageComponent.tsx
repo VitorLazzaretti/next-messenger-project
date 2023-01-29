@@ -2,7 +2,6 @@
 
 import { useSession } from "next-auth/react";
 import Image from "next/image";
-import { useEffect, useState } from "react";
 import { Message } from "../typings";
 import TimeAgo from 'react-timeago';
 
@@ -11,15 +10,6 @@ type Props = {
 };
 
 function MessageComponent({ message }: Props) {
-  const [createAt, setCreateAt] = useState<String | undefined>();
-
-  useEffect(() => {
-
-    setCreateAt(new Date(message.created_at).toLocaleString());
-
-
-  });
-
   const session = useSession()?.data;
   const isUser = session?.user?.email === message.email;
 
