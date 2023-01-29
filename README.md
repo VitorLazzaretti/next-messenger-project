@@ -1,27 +1,40 @@
-# Next.js + Tailwind CSS Example
+# Next.js Example Messenger Project
 
-This example shows how to use [Tailwind CSS](https://tailwindcss.com/) [(v3.2)](https://tailwindcss.com/blog/tailwindcss-v3-2) with Next.js. It follows the steps outlined in the official [Tailwind docs](https://tailwindcss.com/docs/guides/nextjs).
+## About the Project
 
-## Deploy your own
+This project is an EXAMPLE that was built based on the youtube video from [Sonny Sangha](https://www.youtube.com/watch?v=T2jKJF4BZOY) with Next.js. I was training my [TailwindCSS](https://tailwindcss.com/) and discovering how to use the follow technologies.
 
-Deploy the example using [Vercel](https://vercel.com?utm_source=github&utm_medium=readme&utm_campaign=next-example) or preview live with [StackBlitz](https://stackblitz.com/github/vercel/next.js/tree/canary/examples/with-tailwindcss)
+This project can be accessed at the current link:
 
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/git/external?repository-url=https://github.com/vercel/next.js/tree/canary/examples/with-tailwindcss&project-name=with-tailwindcss&repository-name=with-tailwindcss)
+## Technologies used
 
-## How to use
+### Frameworks
 
-Execute [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app) with [npm](https://docs.npmjs.com/cli/init), [Yarn](https://yarnpkg.com/lang/en/docs/cli/create/), or [pnpm](https://pnpm.io) to bootstrap the example:
+* [Next.js](https://nextjs.org/)
+* [React.js](https://reactjs.org/)
+
+### Main Dependencies
+
+* [TailwindCSS](https://tailwindcss.com/) - CSS Framework Packed with Classes
+* [Upstash](https://upstash.com/) - Serverless Data for Redis
+* [Pusher](https://pusher.com/) - Realtime Events
+* [NextAuth](https://next-auth.js.org/) - User Authentication with Next.js
+
+## How to Execute the Project
+
+Requirements: 
+* Node v16.8.0 or later
 
 ```bash
-npx create-next-app --example with-tailwindcss with-tailwindcss-app
-```
+# clone repo
+git clone https://github.com/VitorLazzarettiDev/next-messenger-project
 
-```bash
-yarn create next-app --example with-tailwindcss with-tailwindcss-app
-```
+# enter directory
+cd next-messenger-project
 
-```bash
-pnpm create next-app --example with-tailwindcss with-tailwindcss-app
-```
+# install dependencies
+npm install
 
-Deploy it to the cloud with [Vercel](https://vercel.com/new?utm_source=github&utm_medium=readme&utm_campaign=next-example) ([Documentation](https://nextjs.org/docs/deployment)).
+# run project
+npm run dev
+```
