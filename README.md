@@ -5,7 +5,7 @@
 
 This project is an EXAMPLE that was built based on the youtube video from [Sonny Sangha](https://www.youtube.com/watch?v=T2jKJF4BZOY) with Next.js. I was training my [TailwindCSS](https://tailwindcss.com/) and discovering how to use the follow technologies. The project is a simple chat application, with Meta and GitHub Auth.
 
-This project can be accessed at the current link:
+This project can be accessed at the current link: [https://next-messenger-project.vercel.app/](https://next-messenger-project.vercel.app/)
 
 ## Technologies used
 
