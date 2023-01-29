@@ -7,7 +7,7 @@ async function SignInPage() {
   return (
     <div>
       <SignInComponent
-        providers={providers}
+        prov={providers}
       />
     </div>
   );

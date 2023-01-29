@@ -4,7 +4,7 @@ import { getProviders, signIn } from "next-auth/react";
 import Image from "next/image";
 
 type Props = {
-  providers: Awaited<ReturnType<typeof getProviders>>
+  prov: Awaited<ReturnType<typeof getProviders>>
 }
 
 type ProviderInfo = {
@@ -13,7 +13,9 @@ type ProviderInfo = {
   color: string;
 }
 
-function SignInComponent({ providers }: Props) {
+function SignInComponent({ prov }: Props) {
+  const providers = prov;
+
   const info: ProviderInfo[] = [
     {
       name: 'Facebook',
@@ -29,7 +31,7 @@ function SignInComponent({ providers }: Props) {
 
   return (
     <div>
-      {Object.values(providers!).map((provider) => (
+      {providers && Object.values(providers!).map((provider) => (
         <div
           key={provider.id}
           className="flex flex-col mx-auto w-96 justify-center p-8 rounded-md items-center cursor-pointer bg-gray-200 my-8"
