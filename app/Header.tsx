@@ -1,12 +1,11 @@
-"use client"
-
+import { getServerSession } from 'next-auth';
 import { useSession } from 'next-auth/react';
 import Image from 'next/image';
 import Link from 'next/link';
 import LogoutButton from './LogoutButton';
 
-function Header() {
-	const session = useSession()?.data;
+async function Header() {
+	const session = await getServerSession();
 
 	return (
 		<div>
