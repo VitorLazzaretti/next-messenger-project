@@ -1,6 +1,8 @@
 import { getProviders } from "next-auth/react";
 import SignInComponent from "./SignInComponent";
 
+export const revalidate = 10;
+
 async function SignInPage() {
   const providers = (await getProviders() || null);
   const url = process.env.VERCEL_URL ? `https://${process.env.VERCEL_URL}` : 'http://localhost:3000'
