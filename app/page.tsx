@@ -5,19 +5,30 @@ import MessageList from "./MessageList";
 import Providers from "./providers";
 
 async function HomePage() {
-  const data = await fetch(`${process.env.VERCEL_URL ? 'https://' + process.env.VERCEL_URL : 'http://localhost:3000'}/api/get_messages/`).then((res) => res.json());
-
-  const messages: Message[] = data.messages;
-  const session = await getServerSession();
-
-  return (
+  try {
+    const request = await fetch(`${process.env.VERCEL_URL ? 'https://' + process.env.VERCEL_URL : 
+    'http://localhost:3000'}/api/get_messages/`, { cache: 'no-store' });
+  
+    const data = await request.json();
+  
+    const messages: Message[] = data.messages;
+    const session = await getServerSession();
+  
+    return (
+      <main>
+        <Providers session={session}>
+          <MessageList initialMessages={messages} />
+          <ChatInput />
+        </Providers>
+      </main>
+    )
+  } catch (error) {
+   return (
     <main>
-      <Providers session={session}>
-        <MessageList initialMessages={messages} />
-        <ChatInput />
-      </Providers>
+      <h1>Something went wrong</h1>
     </main>
-  )
+   ) 
+  }
 }
 
 export default HomePage;
