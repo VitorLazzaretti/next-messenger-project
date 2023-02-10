@@ -29,11 +29,12 @@ function SignInComponent({ providers }: Props) {
 
   return (
     <div>
-      {providers ? Object.values(providers!).map((provider) => (
+      {providers ? Object.values(providers).map((provider) => (
         <div
           key={provider.id}
           className="flex flex-col mx-auto w-96 justify-center p-8 rounded-md items-center cursor-pointer bg-gray-200 my-8"
           onClick={() => {
+            console.log(`https://${process.env.VERCEL_URL}`);
             signIn(provider.id, {
               redirect: true,
               callbackUrl: process.env.VERCEL_URL ? `https://${process.env.VERCEL_URL}` : 'http://localhost:3000'
