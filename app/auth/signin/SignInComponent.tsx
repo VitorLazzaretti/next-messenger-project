@@ -37,8 +37,8 @@ function SignInComponent({ providers }: Props) {
             console.log(`https://${process.env.VERCEL_URL}`);
             signIn(provider.id, {
               redirect: true,
-              callbackUrl: process.env.VERCEL_URL ? `https://${process.env.VERCEL_URL}` : 'http://localhost:3000'
-            })
+              callbackUrl: process.env.VERCEL_URL ? `https://${process.env.VERCEL_URL}` : 'http://localhost:3000', 
+            }).catch(err => console.log(err));
           }}
         >
           <Image
