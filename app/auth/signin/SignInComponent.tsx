@@ -5,6 +5,7 @@ import Image from "next/image";
 
 type Props = {
   providers: Awaited<ReturnType<typeof getProviders>>
+  url: string
 }
 
 type ProviderInfo = {
@@ -13,7 +14,9 @@ type ProviderInfo = {
   color: string;
 }
 
-function SignInComponent({ providers }: Props) {
+function SignInComponent({ providers, url }: Props) {
+  console.log(url);
+
   const info: ProviderInfo[] = [
     {
       name: 'Facebook',
@@ -34,10 +37,9 @@ function SignInComponent({ providers }: Props) {
           key={provider.id}
           className="flex flex-col mx-auto w-96 justify-center p-8 rounded-md items-center cursor-pointer bg-gray-200 my-8"
           onClick={() => {
-            console.log(`https://${process.env.VERCEL_URL}`);
             signIn(provider.id, {
               redirect: true,
-              callbackUrl: process.env.VERCEL_URL ? `https://${process.env.VERCEL_URL}` : 'http://localhost:3000', 
+              callbackUrl: url, 
             }).catch(err => console.log(err));
           }}
         >
