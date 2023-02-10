@@ -29,7 +29,7 @@ function SignInComponent({ providers }: Props) {
 
   return (
     <div>
-      {Object.values(providers!).map((provider) => (
+      {providers ? Object.values(providers!).map((provider) => (
         <div
           key={provider.id}
           className="flex flex-col mx-auto w-96 justify-center p-8 rounded-md items-center cursor-pointer bg-gray-200 my-8"
@@ -52,7 +52,13 @@ function SignInComponent({ providers }: Props) {
             className={`text-center min-w-[250px] text-white font-bold py-2 px-4 rounded ${info.find((item) => item.name === provider.name)?.color}`}
           > Sign In with {provider.name} </div>
         </div>
-      ))}
+      )):
+      <div>
+        <p className="text-center text-sm text-gray-500">
+          No providers found
+        </p>
+      </div>
+      }
     </div>
   )
 }
